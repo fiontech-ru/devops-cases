@@ -6,20 +6,20 @@
 
 ## Кейсы
 
-### [Обход блокировки api.telegram.org](./cases/telegram-api-block/README.md)
+### [Обход блокировки api.telegram.org](./devops-cases/telegram-api-block/README.md)
 
 Форма обратной связи возвращала `200 OK`, но уведомления в Telegram
 не приходили. Диагностика выявила сетевую недоступность
 `api.telegram.org` (ни IPv4, ни IPv6). Решение — локальный прокси
 `tgwsapiproxy` через Cloudflare Worker.
 
-- [Обзор кейса](./cases/telegram-api-block/README.md)
-- [Диагностика](./cases/telegram-api-block/diagnosis.md)
-- [Решение](./cases/telegram-api-block/solution.md)
+- [Обзор кейса](./devops-cases/telegram-api-block/README.md)
+- [Диагностика](./devops-cases/telegram-api-block/diagnosis.md)
+- [Решение](./devops-cases/telegram-api-block/solution.md)
 - Тикеты:
-    - [TICKET-1 — обнаружение (L1)](./cases/telegram-api-block/tickets/TICKET-1.md)
-    - [TICKET-2 — разбор разработчиком (L2)](./cases/telegram-api-block/tickets/TICKET-2.md)
-    - [TICKET-3 — инфраструктура (L3)](./cases/telegram-api-block/tickets/TICKET-3.md)
+    - [TICKET-1 — обнаружение (L1)](./devops-cases/telegram-api-block/tickets/TICKET-1.md)
+    - [TICKET-2 — разбор разработчиком (L2)](./devops-cases/telegram-api-block/tickets/TICKET-2.md)
+    - [TICKET-3 — инфраструктура (L3)](./devops-cases/telegram-api-block/tickets/TICKET-3.md)
 
 ## Структура репозитория
 
