@@ -26,15 +26,14 @@
 ```text
 devops-cases/
 ├── README.md
-└── cases/
-    └── telegram-api-block/
-        ├── README.md          # краткий обзор кейса
-        ├── diagnosis.md       # диагностика: команды, выводы, наблюдения
-        ├── solution.md        # решение: архитектура, что сделал DevOps/Developer
-        └── tickets/
-            ├── TICKET-1.md    # L1: обнаружение
-            ├── TICKET-2.md    # L2: первичный разбор
-            └── TICKET-3.md    # L3: инфраструктура
+└── telegram-api-block/
+    ├── README.md          # краткий обзор кейса
+    ├── diagnosis.md       # диагностика: команды, выводы, наблюдения
+    ├── solution.md        # решение: архитектура, что сделал DevOps/Developer
+    └── tickets/
+        ├── TICKET-1.md    # L1: обнаружение
+        ├── TICKET-2.md    # L2: первичный разбор
+        └── TICKET-3.md    # L3: инфраструктура
 ```
 
 ## Формат кейса
