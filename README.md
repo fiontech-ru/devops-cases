@@ -6,7 +6,7 @@
 
 ## Кейсы
 
-### [Обход блокировки api.telegram.org](./devops-cases/telegram-api-block/README.md)
+### [Обход блокировки api.telegram.org](./telegram-api-block/)
 
 Форма обратной связи возвращала `200 OK`, но уведомления в Telegram
 не приходили. Диагностика выявила сетевую недоступность
