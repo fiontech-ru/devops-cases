@@ -21,24 +21,34 @@
     - [TICKET-2 — разбор разработчиком (L2)](./telegram-api-block/tickets/TICKET-2.md)
     - [TICKET-3 — инфраструктура (L3)](./telegram-api-block/tickets/TICKET-3.md)
 
+### [Оптимизация Docker-образа](./docker-build-optimization/)
+
+Сборка занимала ~5 минут, образ — 1.44 GB, базовый `php:8.2.23-fpm` содержал критические CVE. После multi-stage build, `.dockerignore` и обновления PHP/Node.js: образ — 875 MB (−39%), warm build — ~1 с, CVE закрыты.
+
+- [Обзор кейса](./docker-build-optimization/README.md)
+
 ## Структура репозитория
 
 ```text
 devops-cases/
 ├── README.md
-└── telegram-api-block/
-    ├── README.md          # краткий обзор кейса
-    ├── diagnosis.md       # диагностика: команды, выводы, наблюдения
-    ├── solution.md        # решение: архитектура, что сделал DevOps/Developer
-    └── tickets/
-        ├── TICKET-1.md    # L1: обнаружение
-        ├── TICKET-2.md    # L2: первичный разбор
-        └── TICKET-3.md    # L3: инфраструктура
+├── telegram-api-block/
+│   ├── README.md          # краткий обзор кейса
+│   ├── diagnosis.md       # диагностика: команды, выводы, наблюдения
+│   ├── solution.md        # решение: архитектура, DevOps/Developer
+│   └── tickets/
+│       ├── TICKET-1.md    # L1: обнаружение
+│       ├── TICKET-2.md    # L2: первичный разбор
+│       └── TICKET-3.md    # L3: инфраструктура
+└── docker-build-optimization/
+    └── README.md          # обзор, замеры, результат
 ```
 
 ## Формат кейса
 
-Каждый кейс следует структуре:
+Структура зависит от типа кейса.
+
+Инцидент с ролями L1/L2/L3 (как telegram-api-block):
 
 1. **README.md** — краткий обзор: проблема, как обнаружили, разбор по ролям,
    результат.
@@ -46,6 +56,13 @@ devops-cases/
 3. **solution.md** — архитектура решения, что сделал DevOps (L3) и разработчик (L2),
    эксплуатация, рекомендации.
 4. **tickets/** — тикеты по линиям поддержки, как они выглядели бы в трекере.
+
+Плановая оптимизация (как docker-build-optimization):
+
+1. **README.md** — проблема, что сделано, замеры «до/после»,
+что пошло не так, рекомендации. Без diagnosis.md/solution.md,
+потому что диагностики как отдельного этапа не было — было
+измерение и целенаправленная оптимизация.
 
 ## Автор
 
