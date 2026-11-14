@@ -56,6 +56,20 @@ IPv4-сокета не было. Исправлено явным `listen = 0.0.0
 - Тикеты:
     - [TICKET-1 — аудит и обновление](./container-version-audit/tickets/TICKET-1.md)
 
+### [Изоляция dev/staging/prod на одном хосте](./multi-env-docker-compose/)
+
+Проект жил в одном каталоге с одним `.env` и одним набором контейнеров —
+деплой staging мог уронить prod. Изоляция через `COMPOSE_PROJECT_NAME`,
+три базы с разделением runtime/migration пользователей, три каталога
+на сервере, NPM-маршрутизация по доменам.
+
+- [Обзор кейса](./multi-env-docker-compose/README.md)
+- Тикеты:
+    - [TICKET-1 — эпик: изоляция dev/staging/prod (CTO/DevOps/Dev)](./multi-env-docker-compose/tickets/TICKET-1.md)
+    - [TICKET-2 — mysql_migrator в config/database.php (Dev)](./multi-env-docker-compose/tickets/TICKET-2.md)
+    - [TICKET-3 — healthcheck Redis и env_file (DevOps)](./multi-env-docker-compose/tickets/TICKET-3.md)
+    - [TICKET-4 — проверка env-переменных внутри контейнера (Dev)](./multi-env-docker-compose/tickets/TICKET-4.md)
+
 ## Структура репозитория
 
 ```text
@@ -77,10 +91,17 @@ devops-cases/
 │   ├── README.md          # обзор, диагностика, решение
 │   └── tickets/
 │       └── TICKET-1.md    # 502 после пересборки
-└── container-version-audit/
-    ├── README.md          # обзор, аудит, результат
+├── container-version-audit/
+│   ├── README.md          # обзор, аудит, результат
+│   └── tickets/
+│       └── TICKET-1.md    # аудит и обновление
+└── multi-env-docker-compose/
+    ├── README.md          # проблема, роли, решение, что пошло не так
     └── tickets/
-        └── TICKET-1.md    # аудит и обновление
+        ├── TICKET-1.md    # эпик: изоляция окружений (CTO)
+        ├── TICKET-2.md    # mysql_migrator (Dev)
+        ├── TICKET-3.md    # healthcheck Redis и env_file (DevOps)
+        └── TICKET-4.md    # проверка env-переменных (Dev)
 ```
 
 ## Формат кейса
